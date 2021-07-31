@@ -4,11 +4,17 @@
  * Напишите функцию intersection(arr1, arr2). Она должна принимать
  * на вход два массива целых чисел. Функция должна вернуть новый
  * массив чисел, содержащихся в обоих исходных массивах.
- * 
-*/
+ *
+ */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+  const cross = [];
+  arr1.concat(arr2).forEach((item) => {
+    if (arr1.includes(item) && arr2.includes(item) && !cross.includes(item)) {
+      cross.push(item);
+    }
+  });
+  return cross;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

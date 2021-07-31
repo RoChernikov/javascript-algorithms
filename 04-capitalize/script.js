@@ -4,10 +4,19 @@
  * Напишите функцию capitalize(str). Функция должна возвращать новую
  * строку каждое слово в которой начинается с прописной буквы.
  *
-*/
+ */
 
 function capitalize(str) {
-    // Напишите код здесь
+  str = str
+    .split(' ')
+    .map((element) => {
+      if (element !== '') {
+        element = element[0].toUpperCase() + element.slice(1);
+      }
+      return element;
+    })
+    .join(' ');
+  return str;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
