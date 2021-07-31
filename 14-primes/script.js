@@ -6,22 +6,37 @@
  *
  */
 
+// function primes(num) {
+//   const primesArr = [];
+
+//   for (let i = 2; i <= num; i++) {
+//     if (isPrime(i)) {
+//       primesArr.push(i);
+//     }
+//   }
+//   return primesArr;
+// }
+
+// function isPrime(num) {
+//   for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
+//     if (num % i === 0) return false;
+//   }
+//   return num > 1;
+// }
+
+//---+++++Решение решетом+++++---
 function primes(num) {
   const primesArr = [];
-
+  const seive = [];
   for (let i = 2; i <= num; i++) {
-    if (isPrime(i)) {
+    if (!seive[i]) {
       primesArr.push(i);
+      for (let j = i * i; j <= num; j += i) {
+        seive[j] = true;
+      }
     }
   }
   return primesArr;
-}
-
-function isPrime(num) {
-  for (let i = 2, max = Math.sqrt(num); i <= max; i++) {
-    if (num % i === 0) return false;
-  }
-  return num > 1;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

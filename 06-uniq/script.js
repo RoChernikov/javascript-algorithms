@@ -10,13 +10,13 @@
 function uniq(arr) {
   const uniqArr = [];
   const arrLength = arr.length;
-  for (i = 0; i < arrLength; i++) {
+  for (let i = 0; i < arrLength; i++) {
     const buffer = arr.pop();
     if (!arr.includes(buffer)) {
       uniqArr.push(buffer);
     }
   }
-  return uniqArr.reverse();
+  return uniqArr;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
